@@ -1,6 +1,13 @@
-name: titanic-retraining 
-conda_env: conda.yaml 
- 
-entry_points: 
-  main: 
-    command: "python modelling.py" 
+name: titanic-retraining
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      test_size:
+        type: float
+        default: 0.2
+      random_state:
+        type: int
+        default: 42
+    command: "python modelling.py"
