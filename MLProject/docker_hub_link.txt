@@ -1,0 +1,14 @@
+DOCKER HUB IMAGE
+
+Repository: https://hub.docker.com/r/mok111/titanic-mlflow
+
+Image Name: mok111/titanic-mlflow:latest
+Digest: sha256:73a8ca78f54f9dae1031e31cff2b1f186f3757ab932969f7fcac9391e97a6bbc
+
+Test Result:
+  - F1-Score: 0.7692
+  - Accuracy: 0.8324
+
+Commands:
+  - Pull: docker pull mok111/titanic-mlflow:latest
+  - Run: docker run --rm mok111/titanic-mlflow:latest
