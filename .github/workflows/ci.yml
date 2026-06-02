@@ -3,8 +3,6 @@ name: CI - MLflow Project Retraining
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -22,12 +20,12 @@ jobs:
       
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install mlflow pandas numpy scikit-learn
+          pip install pandas numpy scikit-learn mlflow
       
-      - name: Run MLflow Project (retraining)
+      - name: Run training script
         run: |
-          mlflow run MLProject/ --no-conda
+          cd MLProject
+          python modelling.py
       
       - name: Upload model artifact
         uses: actions/upload-artifact@v4
